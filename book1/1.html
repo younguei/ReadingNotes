@@ -176,12 +176,88 @@
     </div>
 
     <div class="chapter12">
-        <h3>第十一章:性能优化</h3>
+        <h3>第十二章:性能优化</h3>
         <p>
             css的书写优化对于大型网站来说是必要的。<br>
             属性简写: <br>background：background-img background-repeat background-position;
             <br>
              font: font-family <strong>font-size/line-height</strong> font-weight;
+        </p>
+    </div>
+
+    <div class="chapter13">
+        <h3>第十三章:CSS技巧</h3>
+        <p>
+            Icon Font图标<br>
+            <strong>icon font技术：指的是使用字体文件取代图片文件，来实现小图标的效果。</strong>
+            <br> <a href="http://www.iconfont.cn/" target="_blank">iconFont网址</a>
+        </p>
+        <p>
+            在iconfont上下载完毕图标代码后，会有三种方式引入小图标。
+            <ul>
+                <li>unicode引用:最原始的方式，兼容性最好，将图标作为字体，先定义@font-face，在引入字体，缺点是无法判断写的是什么，语义不明确  <strong><a href="demo13-1.html" target="_blank">实例链接</a></strong></li>
+                <li>font-class引用: 是unicode的升级，解决了unicode语意不明的情况 使用方法：引入css，添加类即可，类似bootstrap中icon字体图标的使用方法 <strong><a href="demo13-2.html" target="_blank">实例链接</a></strong></li>
+                <li>symbol引入： 是一种全新的使用方法，未来的主流，解决了前两种的弊端，使用方法: 引入js文件，添加css代码，添加类即可，类似bootstrap中icon字体图标的使用方法. <strong><a href="demo13-3.html" target="_blank">实例链接</a></strong></li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="chapter14">
+        <h3>第十四章: CSS重要概念</h3>
+        <p>
+            <ul>
+                <li>
+                    <strong>包含块:</strong>包含块就是一个盒子，包含块决定了其内部盒子的的大小和定位，元素的包含块是离它最近的<strong>块级祖先元素</strong><br>
+                    <strong>绝对定位元素包含块为距离最近的position不为static的祖先元素，注意这里不必为块级元素</strong><br>
+                    <a href="demo14-1.html" target="_blank">实例链接</a>
+                </li>
+                <li>
+                    <strong>层叠上下文:</strong>层叠上下文可以被创建，一个元素叠放在另一个元素上，形成了层叠<br>
+                    <strong>层叠级别:</strong>利用z-index可以创建一个层叠上下文;一个元素中有背景色、文字、这些东西的排列需要用到层叠级别<br>
+                    在同一层叠上下文中，层叠级别从低到高：
+                    <ul>
+                        <li>背景和边框</li>
+                        <li>该元素内部元素z-index为负值的子元素</li>
+                        <li>块盒子</li>
+                        <li>浮动盒子</li>
+                        <li>行内盒子</li>
+                        <li>z-index:0的内部元素</li>
+                        <li>z-index为正值的内部元素</li>
+                    </ul>
+                    <a href="demo14-2.html" target="_blank">实例链接</a>
+                </li>
+                <li>
+                    <strong>格式上下文:</strong>在普通文档流中，每个元素看作一个盒子，都会参与一种格式上下文 。<br>
+                    <strong>BFC:</strong>块级元素参与块级上下文block-formatting-context (包括block table元素)<br>
+                    <strong>IFC:</strong>行内元素参与行级格式上下文inline-formatting-context  (包括inline  inline-table元素)<br>
+                </li>
+                <li>
+                    <strong>创建BFC:</strong>页面自动会创建一个BFC，所有的块级元素都在这个默认的BFC中<br>
+                    <strong>手动创建BFC：</strong>
+                    <ul>
+                        <li>根元素</li>
+                        <li>float属性除了none以外的值</li>
+                        <li>positon属性除了static和relative以外的值</li>
+                        <li>overflow属性为auto或hidden或scroll的值</li>
+                        <li>display属性为inline-block或table-caption或table-cell</li>
+                    </ul>
+                    <strong>BFC的特点</strong>
+                    <ul>
+                        <li>在一个BFC内部，盒子会在垂直方向上一个接一个排列</li>
+                        <li>在一个BFC内部，相邻的margin-top回和margin-bottom重合</li>
+                        <li>在一个BFC内部，每一个元素的左外边界会紧贴包含盒子的左边</li>
+                        <li>在一个BFC内部，有一个浮动元素，而且如果存在另一个新的BFC元素，那么这个新BFC元素不会和浮动元素区域重叠</li>
+                        <li>计算一个BFC的高度时候，其内部浮动元素的高度也会参与计算</li>
+                    </ul>
+                    <strong>实例链接</strong>
+                    <ul>
+                        <li><a href="demo14-3.html" target="_blank">创建BFC来避免垂直外边距叠加</a></li>
+                        <li><a href="demo14-4.html" target="_blank">创建BFC来清除浮动</a></li>
+                        <li><a href="demo14-5.html" target="_blank">避免元素浮动后文字环绕问题</a></li>
+                        <li><a href="demo14-6.html" target="_blank">用BFC创建自适应两列布局</a></li>
+                    </ul>
+                </li>
+            </ul>
         </p>
     </div>
 </body>

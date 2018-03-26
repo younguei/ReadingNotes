@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>unicode引用</title>
+    <style media="screen">
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./iconFont/iconfont.eot');
+            src: url('./iconFont/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('./iconFont/iconfont.woff') format('woff'),
+            url('./iconFont/iconfont.ttf') format('truetype'),
+            url('./iconFont/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:50px;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body>
+    <i class="iconfont">&#xe602;</i>
+    <i class="iconfont">&#xe603;</i>
+    <i class="iconfont">&#xe604;</i>
+    <i class="iconfont">&#xe605;</i>
+    <i class="iconfont">&#xe606;</i>
+    <i class="iconfont">&#xe607;</i>
+    <div class="note">
+        <p>
+            unicode可以利用font-size调整字体大小<br>
+        </p>
+        <pre>
+            @font-face {
+                font-family: 'example';
+                src: url(example.ttf);
+                font-style: normal;
+                font-weight: normal;
+                unicode-range: U+0025-00FF;
+                font-variant: small-caps;
+                font-stretch: expanded;
+                font-feature-settings："liga1" on;
+            }
+            .font {
+                font-family: example;
+            }
+        </pre>
+        <p>
+            @font-face是css3的新属性，表示嵌入字体，加载服务器端的字体文件，让浏览器端可以显示用户电脑没有安装的字体<br>
+            @font-face{font-family:字体名称;src:url("字体文件路径");}
+            这里font-family看成一个字体变量，名称随意
+        </p>
+    </div>
+</body>
+</html>

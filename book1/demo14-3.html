@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>创建BFC来避免垂直外边距叠加</title>
+    <style media="screen">
+        .innerbox1,.innerbox2{
+            height: 100px;
+            width:100px;
+            margin:50px;
+            background: orange;
+        }
+        .newbox{
+            overflow: hidden;/*创建了一个新的BFC*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="innerbox1"></div>
+        <div class="newbox">
+            <div class="innerbox2"></div>
+        </div>
+    </div>
+    <div class="note">
+        在div外嵌套一层div使之成为一个新的BFC,由于这是两个BFC所以元素的上下margin不会重合
+    </div>
+</body>
+</html>

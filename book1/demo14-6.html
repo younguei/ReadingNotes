@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用BFC创建自适应两列布局</title>
+    <style media="screen">
+        .left{
+            width:100px;
+            height: 400px;
+            float:left;
+            background:orange;
+        }
+        .right{
+            width:60%;
+            height:500px;
+            overflow: hidden;
+            background: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="note">
+        由于侧边栏浮动起来了，将右侧栏变为新的BFC，那么新BFC就不会和浮动元素区域重叠
+    </div>
+</body>
+</html>

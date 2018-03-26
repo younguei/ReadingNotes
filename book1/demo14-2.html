@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style media="screen">
+        .wrapper{
+            width:500px;
+            height:300px;
+            border:1px solid black;
+        }
+        img{
+            float:left;
+        }
+        .wrapper2{
+            width:250px;
+            height:250px;
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="pic1.jpg" alt="">
+        <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+    </div>
+    <div class="wrapper2">
+
+    </div>
+    <div class="note">
+        <p>
+            warpper和wrapper2属于不同的层叠级别<br>
+            warpper内部的元素属于统一层叠级别，由于img浮动，所以img在content之上，但是内容层叠级别最高？？？？？
+        </p>
+    </div>
+</body>
+</html>
