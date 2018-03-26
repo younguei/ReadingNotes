@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>外边距叠加的影响</title>
+    <style media="screen">
+        .box1{
+            width:50px;
+            height: 50px;
+            margin:50px;
+            background: orange;
+        }
+        .parent{
+            width:100px;
+            height:100px;
+            margin:50px;
+            background: blue;
+            /* 不存在padding和border的时候margin才会重合 */
+            /* border:1px solid black; */
+        }
+        .child{
+            width:50px;
+            height: 50px;
+            border:1px solid black;
+            background-color: orange;
+            margin:50px;
+        }
+        .box3{
+            margin:50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>同级元素上下margin叠加</h2>
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <h2>父子元素上下margin重叠</h2>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+    <h2>空元素 上下margin重合(用审查元素查看效果)</h2>
+    <div class="box3"></div>
+
+</body>
+</html>

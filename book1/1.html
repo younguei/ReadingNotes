@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web前端开发精品课--HTML与CSS进阶教程</title>
+    <style media="screen">
+        pre{
+            background:#ccc;
+            color:green;
+            padding:10px 0;
+            border:1px dashed green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web前端开发精品课--HTML与CSS进阶教程</h1>
+    <p>看完这本书收获很大，知识点讲解中伴随着多个实例代码，容易理解，自己对css的理解有一定的提高，书中的一些前端局部css小技巧值得反复学习，所以将这些有用的知识点整理下来，方便以后的查看。</p>
+    <div class="chapter3">
+        <h3>第三章:CSS基础知识</h3>
+        <p>关于em:单位的问题  em是相对于<strong>当前元素</strong>字体大小而言的。</p>
+        <pre>
+            .parent{
+                font-size:10px;
+            }
+            .child{
+                font-size:1.5em;
+                height: 10em;
+                width: 5em;
+            }
+        </pre>
+        <p>这里子元素的宽高为150px 75px <strong>em单位的大小是根据当前元素的字体大小来确定的，此时font-size为15px;所以1em为15px,不是10px</strong></p>
+        <p><strong>所以：当子元素字体大小改变后，元素em需要重新计算</strong></p>
+        <a href="demo3-1.html" target="_blank">实例代码</a>
+    </div>
+
+    <div class="chapter4">
+        <h3>第四章:CSS规范</h3>
+        <p>1. 关于CSS样式书写的先后顺序  影响文档流样式 &gt; 元素盒子模型样式 &gt; 文本样式 &gt; 装饰样式 &gt; 其它样式</p>
+        <pre>
+            .demo{
+                /*影响文档流样式*/
+                display:block;
+                positon: absolute;
+                left: 200px;
+                top: 200px;
+                /*盒子模型*/
+                width:400px;
+                height:400px;
+                /*文本样式*/
+                vertical-align: center;
+                font-size:20px;
+                /*装饰样式*/
+                background:red;
+                color:#ccc;
+                /*其它*/
+                cursor: pointer;
+            }
+        </pre>
+        <p>2. 关于reset.css样式 重置css默认样式 *{padding:0;margin:0}效果差，实际项目中一般使用reset.css来重置样式</p>
+    </div>
+
+    <div class="chapter5">
+        <h3>第五章: 盒子模型</h3>
+        <p>
+            1. 外边距叠加的影响  外边距叠加只对block和行内块元素 行内元素不存在左右margin<br>
+            (1)同级元素的margin-top和margin-bottom会叠加 最终的margin为两者中最大的那个<br>
+            (2)父子元素 当父元素没有padding border只有margin的时候 子元素的上下margin和父元素的上下margin重合<br>
+            (3)空元素 当元素内容为空的且padding和margin不存在的时候 上下margin会重合<br>
+            <a href="demo5-1.html" target="_blank">实例代码</a>
+        </p>
+        <p>
+            2. 负margin的作用 <br>
+            <strong>margin-top margin-left为负数 则该元素会拉向那个方向</strong><br>
+            <strong>margin-bottom margin-right为负数 影响后续的元素</strong><br>
+            (1) <strong>实现图片的文字对齐效果  (记住 还是不理解)</strong><br>
+            (2) 实现自适应两列布局<br>
+            (3) 元素垂直居中<br>
+            <a href="demo5-2.html" target="_blank">实例代码</a>
+        </p>
+        <p>
+            3. overflow:hidden; 清除浮动<br>
+        </p>
+    </div>
+
+    <div class="chapter6">
+        <h3>第六章: display属性</h3>
+        <p>
+            1. 块元素<br>
+            2. 行内元素  无法定义宽高 无法定义上下margin<br>
+            3. 行内块元素 <strong>在HTML中最常见的行内块元素为img和input 同时具备块元素和行内元素的特点</strong>
+            <br>
+            display:table(类似table元素);table-row(类似tr元素);table-cell(类似td元素)
+        </p>
+        <p>
+            <strong>display:table-cell;</strong><br>
+            这种显示方式可以将元素以单元格的形式出现，也就是元素具备了td元素的特点<br>
+            (1) 图片垂直居中于元素<br>
+            (2) 登高布局<br>
+            (3) 自动平均划分元素<br>
+            <a href="demo6-1.html" target="_blank">实例代码</a>
+        </p>
+        <p>
+            inline-block 元素之间会存在空白间隙，这是由于空白节点造成的，可以设置font-size:0;来消除影响。
+        </p>
+    </div>
+
+    <div class="chapter7">
+        <h3>第七章: 文本效果</h3>
+        <p>
+            1. text-indent <strong>text-indent:-9999px;项目开发中对于一些想要隐藏的文本，但又是搜索引擎必须的文本使用的方法</strong><br>
+            2. text-align <strong>只对 文字 行内元素 行内块元素有效 对于块元素 使用margin：0 auto;来实现居中效果</strong> <br>
+            3. line-height <strong>关于line-height的取值问题：line-height：百分数；是针对父元素的font-size来说的； line-height:1.5; 是针对当前元素的font-size来说的</strong> <br>
+            4. vertical-align <strong>是定义该元素周围的文字 行内元素 行内块元素的基线相对该元素的基线对齐方式</strong>  vertical-align:数值; 当值为数值不是关键字的时候，负数表示向下偏移，正数表示向上偏移 <br>
+
+            <a href="demo8-1.html" target="_blank">实例链接</a>
+        </p>
+    </div>
+
+    <div class="chapter8">
+        <h3>第八章：表单效果</h3>
+        <p>
+            1. 单选框/复选框和文字对齐效果  利用vertical-align<a href="demo8-1.html" target="_blank">实例链接</a><br>
+            2. 表单对齐 <a href="demo8-2.html" target="_blank">实例链接</a><br>
+            <ul>
+                <li>1. 每一行分为一个左栏表示label，若干右栏表示输入框，左栏长度相等，右栏所有盒子长度之和相等</li>
+                <li>2. 左栏和右栏盒子都为左浮动</li>
+                <li>3. 左栏文字右对齐</li>
+                <li>4. 左栏和所有右栏宽度相加等于行宽，包括padding margin border width</li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="chapter9">
+        <h3>第九章:浮动布局</h3>
+        <p>
+            1. 正常文档流 脱离文档流(利用浮动float或定位postion来改变默认位置) <br>
+            2. 浮动的影响
+            <ul>
+                <li>元素自身变为block元素，可以设置margin width height</li>
+                <li>当父元素高度未定义或小于子元素高度，父元素高度会塌陷</li>
+                <li>对兄弟元素的影响: 浮动于正常流之上</li>
+                <li>当父元素也是浮动元素，子元素也是浮动元素，那么父元素会自动包含该子元素</li>
+            </ul>
+            3. 清除浮动
+            <ul>
+                <li>clear:both; clear属性用于浮动元素后面的元素  <a href="demo9-1.html" target="_blank">实例链接</a></li>
+                <li>overflow:hidden; 在父元素内添加该属性，缺点是会隐藏超出父元素的内容 <a href="demo9-2.html" target="_blank">实例链接</a></li>
+                <li><strong>::after伪元素  推荐使用这个方法</strong> 用来创建一个伪元素，作为已选中元素的最后一个子元素。通常配合content属性来为该元素添加装饰内容。<strong>这个元素默认为行内元素</strong> <a href="demo9-2.html" target="_blank">伪类元素详解</a></li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="chapter10">
+        <h3>第十章: 定位布局</h3>
+        <p>
+            1. position:absolute; 自动将元素转换为块级元素<br>
+            2. z-index属性 只有当position属性为absolute或relative的时候才会使z-index生效<br>
+            <strong>当未指定position属性的时候，z-index属性无效</strong>
+        </p>
+    </div>
+
+    <div class="chapter11">
+        <h3>第十一章:CSS图形</h3>
+        <p>
+            1. 三角形
+            <ul>
+                <li>三角形实现原理 <a href="demo11-1.html" target="blank">实例链接</a></li>
+                <li>带边框三角形 <a href="demo11-1.html" target="blank">实例链接</a></li>
+                <li>带边框三角形的对话框 <a href="demo11-2.html" target="blank">实例链接</a></li>
+            </ul>
+            2. 圆角 border-radius:一个值(表示四个角) 两个值(第一个值表示左上 右下 第二个值表示右上 左下);总而言之:顺序为左上、右上、右下、左下顺时针。 <a href="demo11-3.html" target="blank">实例链接</a><br>
+            3. 椭圆 border-radius:x/y; x代表水平半径 y代表垂直半径
+        </p>
+    </div>
+
+    <div class="chapter12">
+        <h3>第十一章:性能优化</h3>
+        <p>
+            css的书写优化对于大型网站来说是必要的。<br>
+            属性简写: <br>background：background-img background-repeat background-position;
+            <br>
+             font: font-family <strong>font-size/line-height</strong> font-weight;
+        </p>
+    </div>
+</body>
+</html>

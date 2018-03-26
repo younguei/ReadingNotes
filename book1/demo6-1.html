@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>display:table-cell</title>
+    <style media="screen">
+        .box div{
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            border:1px solid black;
+            width:300px;
+        }
+        ul{
+            width:500px;
+            padding:0;
+            display: table;
+        }
+        li{
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>图片垂直居中效果</h3>
+        <div class="img-box">
+            <img src="./pic1.jpg" alt="">
+        </div>
+        <div class="content-box">
+            display:table-cell;
+            vertical-align:middle;
+            实现了图片垂直居中效果
+            同样这两个div实现了登高布局
+            得益于table-cell;
+        </div>
+
+        <h3>实现自动划分父元素</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</body>
+</html>

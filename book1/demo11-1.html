@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三角形实现原理</title>
+    <style media="screen">
+        .triangle{
+            position: relative;
+            height: 0;
+            width:0;
+            border-width:15px;
+            border-color:transparent transparent orange transparent;
+            border-style: solid;
+        }
+        .innerTriangle{
+            position: absolute;
+            left:-13px;
+            top:-11px;
+            height: 0;
+            width:0;
+            border-width:13px;
+            border-color:transparent transparent #fff transparent;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="triangle">
+        <div class="innerTriangle"></div>
+    </div>
+    <div class="note">
+        将div宽高设置为0,只为它设置border,子元素相对父元素定位，用子元素遮盖父元素，使父元素只留下一个边，实现了边框效果。
+    </div>
+</body>
+</html>

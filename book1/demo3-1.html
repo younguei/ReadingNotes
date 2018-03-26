@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>em的使用注意事项</title>
+    <style media="screen">
+        body{
+            font-size: 62.5%;
+        }
+        .box1{
+            font-size: 15px;
+            width:150px;
+            height: 75px;
+            background: orange;
+        }
+        .box2{
+            font-size: 1.5em;  /*这里的em是相对与父级元素字体大小  1em = 10px 所以字体大小为15px 换算为1.5em */
+            width:10em;  /*由于重新设置了字体大小   1em的大小等于当前元素的字体大小 所以1em = 15px  所以width为150px 换算为15em*/
+            height:5em;
+            background: blue;
+        }
+        pre{
+            background:#ccc;
+            color:green;
+            padding:10px 0;
+            border:1px dashed green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+<pre>
+    .box2{
+            font-size: 1.5em;  /*这里的em是相对与父级元素字体大小  1em = 10px 所以字体大小为15px 换算为1.5em */
+            width:10em;  /*由于重新设置了字体大小   1em的大小等于当前元素的字体大小 所以1em = 15px  所以width为150px 换算为15em*/
+            height:5em;
+            background: blue;
+        }
+</pre>
+</body>
+</html>

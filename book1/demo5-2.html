@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>负margin作用</title>
+    <style media="screen">
+        .test2 img{
+            margin:0 3px -3px 0;
+        }
+        .test3{
+            width:100%;
+            height: 50px;
+            background: orange;
+            line-height: 50px;
+            float:left;
+            margin-right: -200px;
+        }
+        .test3 p{
+            margin:0;
+            margin-right: 200px;
+        }
+        .test4{
+            width:200px;
+            height: 50px;
+            background: blue;
+            float:left;
+            line-height: 50px;
+        }
+        .test5{
+            width:400px;
+            height: 400px;
+            position: relative;
+            border:1px solid green;
+        }
+        .test6{
+            position:absolute;
+            left:50%;
+            top:50%;
+            width:100px;
+            height: 100px;
+            margin-left: -50px;
+            margin-top:-50px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h3>实现文字和图片对齐</h3>
+    <div class="test1">
+        <img src="baidu.png" alt="">百度Logo 不对齐
+    </div>
+    <div class="test2">
+        <img src="baidu.png" alt="">百度Logo 利用margin对齐
+    </div>
+    <h3>实现两列自适应布局 一列宽度自适应 一列宽度固定</h3>
+    <div class="test3"><p>宽度自适应  <strong>自适应栏中放入一个p p的margin-right等于固定栏目的宽度 这样保证了文字不会被遮盖</strong></p></div>
+    <div class="test4">宽度固定为200px</div>
+    <h3>实现元素居中效果</h3>
+    <div class="test5">
+        <div class="test6"></div>
+    </div>
+</body>
+</html>

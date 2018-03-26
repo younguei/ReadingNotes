@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对话框效果</title>
+    <style media="screen">
+        .box{
+            position: relative;
+            width:200px;
+            height: 200px;
+            border:1px solid black;
+            margin:20px auto;
+        }
+        .triangle{
+            position: absolute;
+            left:50px;
+            top:-30px;
+            width:0;
+            height: 0;
+            border-width: 15px;
+            border-color: transparent transparent #000 transparent;
+            border-style: solid;
+        }
+        .innerTriangle{
+            position: absolute;
+            left:-14px;
+            top:-13px;
+            width:0;
+            height: 0;
+            border-width: 14px;
+            border-color: transparent transparent #fff transparent;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="triangle">
+            <div class="innerTriangle"></div>
+        </div>
+        这是一个对话框效果.
+    </div>
+</body>
+</html>

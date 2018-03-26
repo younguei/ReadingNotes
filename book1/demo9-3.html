@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>清除浮动::after</title>
+    <style media="screen">
+        .box{
+            border:1px solid black;
+        }
+        .innerbox{
+            width:100px;
+            height: 100px;
+            float:left;
+            background: orange;
+        }
+        .clearBox::after{
+            /* content:"this is a test"; */
+            content: "";
+            display: block;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box clearBox">
+        <div class="innerbox"></div>
+    </div>
+    <div class="note">
+        为目标元素添加::after伪元素，就表示在目标元素内部的最后添加一个行内元素，内容取决于content属性<br>
+        这个方法是最好的，在元素末尾添加一个空的块级元素，将该块级元素应用清除作用浮动效果，这样既不会往html中添加无用的元素，也不会使子元素超出后隐藏<br>
+        同理::before伪元素也是同样的用法
+    </div>
+</body>
+</html>
